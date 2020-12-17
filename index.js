@@ -498,6 +498,7 @@ export default class ModalBox extends React.PureComponent {
           }
         ]}
         {...this.state.pan.panHandlers}>
+        {Platform.OS === 'ios' && this.props.backdropPressToClose && <TouchableWithoutFeedback onPress={this.close}><View style={[styles.absolute]} /></TouchableWithoutFeedback>}
         {this.props.children}
       </Animated.View>
     );
